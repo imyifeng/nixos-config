@@ -12,3 +12,11 @@ Guidelines for AI coding agents working in this repository.
 ## Commit Messages
 
 - Commit messages must be concise and written in English.
+
+## Verifying NixOS Information
+
+- Confirm NixOS, nixpkgs, home-manager, and nh details against current
+  documentation before acting on them.
+- Use the `nixos` MCP server (mcp-nixos) for up-to-date package, option,
+  and version lookups instead of relying on training data; fall back to
+  official documentation when the server is unavailable.
