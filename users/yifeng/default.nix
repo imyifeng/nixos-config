@@ -4,6 +4,7 @@
   imports = [
     ../../modules/home/cli.nix
     ../../modules/home/dev.nix
+    ../../modules/home/git.nix
   ];
 
   home.username = "yifeng";
