@@ -24,6 +24,7 @@
     imports = [
       ../../users/yifeng
       ../../modules/home/gui.nix
+      ../../modules/home/niri.nix
     ];
   };
 }

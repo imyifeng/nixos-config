@@ -20,15 +20,32 @@
       # Reuse the nixpkgs above instead of dragging in a second copy
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Noctalia desktop shell. Keeps its own nixpkgs pin so the derivations
+    # match the noctalia.cachix.org binary cache; following our nixpkgs
+    # would force building the shell from source.
+    noctalia.url = "github:noctalia-dev/noctalia";
+
+    # Noctalia greeter (greetd login screen). Not packaged in nixpkgs
+    # 26.05, so the module and package come from the project flake.
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      # Reuse the nixpkgs above instead of dragging in a second copy
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { self, nixpkgs, home-manager, nixos-wsl, ... }:
+    { self, nixpkgs, home-manager, nixos-wsl, noctalia, noctalia-greeter, ... }:
     {
       nixosConfigurations = {
         # Graphical desktop host
         beryllium = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+          # Inputs for the graphical modules in modules/nixos/desktop-env.nix.
+          specialArgs = {
+            inherit noctalia noctalia-greeter;
+          };
           modules = [
             home-manager.nixosModules.home-manager
             ./hosts/beryllium

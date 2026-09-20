@@ -4,5 +4,7 @@
 {
   home.packages = with pkgs; [
     firefox
+    # Wayland terminal emulator, bound to Mod+T in the niri config.
+    foot
   ];
 }
