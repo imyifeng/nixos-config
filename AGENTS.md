@@ -15,7 +15,7 @@ Guidelines for AI coding agents working in this repository.
 
 ## Verifying NixOS Information
 
-- Confirm NixOS, nixpkgs, home-manager, and nh details against current
+- Confirm NixOS, nixpkgs and home-manager details against current
   documentation before acting on them.
 - Use the `nixos` MCP server (mcp-nixos) for up-to-date package, option,
   and version lookups instead of relying on training data; fall back to
