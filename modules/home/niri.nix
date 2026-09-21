@@ -13,6 +13,14 @@
         clip-to-geometry true
     }
 
+    // niri draws the focus ring as a solid rectangle behind the window,
+    // which shows through foot's translucent background and makes it look
+    // opaque while focused. Draw the ring around foot instead.
+    window-rule {
+        match app-id="^foot$"
+        draw-border-with-background false
+    }
+
     // Noctalia opens its settings UI as a fixed-size floating window.
     window-rule {
         match app-id="dev.noctalia.Noctalia"

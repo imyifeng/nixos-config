@@ -33,6 +33,7 @@
   home-manager.users.yifeng = {
     imports = [
       ../../users/yifeng
+      ../../modules/home/foot.nix
       ../../modules/home/gui.nix
       ../../modules/home/niri.nix
     ];
