@@ -25,8 +25,11 @@
 
   # Starship prompt. Its fish integration (enableInteractive defaults
   # to true) emits `starship init fish | source` into the interactive
-  # shell init.
-  programs.starship.enable = true;
+  # shell init. Bash keeps its plain prompt.
+  programs.starship = {
+    enable = true;
+    enableBashIntegration = false;
+  };
 
   # eza's own alias integration is disabled so it does not fight the
   # aliases above.
