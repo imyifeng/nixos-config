@@ -7,6 +7,9 @@
     // Start the Noctalia shell.
     spawn-at-startup "noctalia"
 
+    // Polkit authentication agent for pkexec prompts.
+    spawn-at-startup "polkit-gnome-authentication-agent-1"
+
     // Rounded corners for all windows.
     window-rule {
         geometry-corner-radius 20
