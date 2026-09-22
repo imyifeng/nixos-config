@@ -5,5 +5,6 @@
     ./gui-apps.nix
     ./foot.nix
     ./niri.nix
+    ./theme.nix
   ];
 }
