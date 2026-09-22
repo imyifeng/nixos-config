@@ -3,11 +3,9 @@
 # opened windows without restarting anything. Noctalia's foot template
 # renders the active palette into ~/.config/foot/themes/noctalia, which
 # main.include imports.
-{ pkgs, ... }:
+{ ... }:
 
 {
-  home.packages = [ pkgs.maple-mono.NF-CN ];
-
   programs.foot = {
     enable = true;
 

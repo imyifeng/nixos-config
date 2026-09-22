@@ -3,5 +3,6 @@
   imports = [
     ./cli
     ./dev
+    ./fonts.nix
   ];
 }
