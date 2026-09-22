@@ -71,6 +71,18 @@
         "url": "https://mirrors.ustc.edu.cn/nix-channels/nixos-26.05/nixexprs.tar.xz"
       }
     },
+    "nixpkgs-unstable": {
+      "locked": {
+        "lastModified": 315532800,
+        "narHash": "sha256-BMbikTjbh5H7ac/OjwGoJrlooh4dgNqhs51ABM83M7g=",
+        "type": "tarball",
+        "url": "https://mirrors.ustc.edu.cn/nix-channels/nixos-unstable/nixexprs.tar.xz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://mirrors.ustc.edu.cn/nix-channels/nixos-unstable/nixexprs.tar.xz"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1789785513,
@@ -127,6 +139,7 @@
         "home-manager": "home-manager",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-unstable": "nixpkgs-unstable",
         "noctalia": "noctalia",
         "noctalia-greeter": "noctalia-greeter"
       }

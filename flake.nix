@@ -9,6 +9,14 @@
       url = "https://mirrors.ustc.edu.cn/nix-channels/nixos-26.05/nixexprs.tar.xz";
     };
 
+    # nixos-unstable channel, used for packages that need newer versions
+    # than the 26.05 pin (e.g. clash-verge-rev). Mix per package with
+    # `pkgs-unstable.<name>`.
+    nixpkgs-unstable = {
+      type = "tarball";
+      url = "https://mirrors.ustc.edu.cn/nix-channels/nixos-unstable/nixexprs.tar.xz";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       # Reuse the nixpkgs above instead of dragging in a second copy
@@ -36,7 +44,8 @@
   };
 
   outputs =
-    { self, nixpkgs, home-manager, nixos-wsl, noctalia, noctalia-greeter, ... }:
+    { self, nixpkgs, nixpkgs-unstable, home-manager, nixos-wsl, noctalia
+    , noctalia-greeter, ... }:
     {
       nixosConfigurations = {
         # Graphical desktop host
@@ -45,6 +54,7 @@
           # Inputs for the graphical modules in modules/nixos/desktop-env.nix.
           specialArgs = {
             inherit noctalia noctalia-greeter;
+            pkgs-unstable = import nixpkgs-unstable { system = "x86_64-linux"; };
           };
           modules = [
             home-manager.nixosModules.home-manager
