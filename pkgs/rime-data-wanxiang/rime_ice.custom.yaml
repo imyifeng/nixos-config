@@ -1,0 +1,14 @@
+# Wanxiang grammar model on rime-ice: parameter set taken from amzxyz's
+# wanxiang scheme. The model file ships in the same data dir; the
+# librime-octagram plugin compiled into nixpkgs librime loads it.
+patch:
+  grammar:
+    language: wanxiang-lts-zh-hans
+    collocation_max_length: 6
+    collocation_min_length: 2
+    collocation_penalty: -14
+    non_collocation_penalty: -6
+    weak_collocation_penalty: -100
+    rear_penalty: -18
+  translator/contextual_suggestions: false
+  translator/max_homophones: 8

@@ -5,6 +5,7 @@
 
 {
   imports = [
+    ./fcitx5.nix
     ./niri.nix
     ./noctalia.nix
     ./clash-party.nix

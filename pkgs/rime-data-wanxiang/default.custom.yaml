@@ -1,0 +1,4 @@
+# Enables rime-ice's own default configuration. nixpkgs ships it renamed
+# to rime_ice_suggestion.yaml to keep the shared data dir neutral.
+patch:
+  __include: rime_ice_suggestion:/

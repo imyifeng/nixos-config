@@ -7,6 +7,9 @@
     // Start the Noctalia shell.
     spawn-at-startup "noctalia"
 
+    // Fcitx5 input method daemon.
+    spawn-at-startup "fcitx5"
+
     // Polkit authentication agent for pkexec prompts.
     spawn-at-startup "polkit-gnome-authentication-agent-1"
 
