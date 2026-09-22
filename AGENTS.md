@@ -22,10 +22,10 @@ Guidelines for AI coding agents working in this repository.
 - One feature per file. Language toolchains live in
   `modules/home/common/dev/<toolchain>.nix` together with their package
   mirror settings; keep a toolchain and its mirror config in one place.
-- Apps without module-level configuration stack into
-  `modules/home/common/cli/stack.nix` (CLI) or
+- Apps without module-level configuration live in
+  `modules/home/common/cli/cli-apps.nix` (CLI) or
   `modules/home/desktop/gui-apps.nix` (GUI). When an app gains real
-  settings, graduate it into its own file next to the stack file and add
+  settings, graduate it into its own file next to the apps file and add
   it to the folder's `default.nix`.
 - Folder `default.nix` files only aggregate imports. Host and user files
   import folders, never individual module files.

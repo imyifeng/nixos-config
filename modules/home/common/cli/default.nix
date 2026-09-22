@@ -2,7 +2,7 @@
   imports = [
     ./bash.nix
     ./fish.nix
-    ./stack.nix
+    ./cli-apps.nix
     ./git.nix
   ];
 }
