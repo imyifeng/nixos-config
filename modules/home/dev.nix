@@ -7,11 +7,10 @@
     # Terminal AI coding agent.
     opencode
 
-    # Python: the interpreter bundles pip; uv and pipx manage tools and
+    # Python: the interpreter bundles pip; uv manages tools and
     # environments outside the Nix store.
     python3
     uv
-    pipx
 
     # JavaScript / TypeScript.
     nodejs
