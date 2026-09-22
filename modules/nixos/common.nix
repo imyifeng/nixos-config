@@ -1,7 +1,14 @@
 # System-level settings shared by every host.
-{ ... }:
+{ pkgs-unstable, ... }:
 
 {
+  # NixOS specialArgs do not reach home-manager modules, so the
+  # unstable channel is forwarded explicitly for home modules to mix
+  # in packages that are missing from the pinned nixpkgs.
+  home-manager.extraSpecialArgs = {
+    inherit pkgs-unstable;
+  };
+
   # Home Manager integration: hosts declare per-user configs through
   # `home-manager.users.<name>`.
   home-manager.useGlobalPkgs = true;

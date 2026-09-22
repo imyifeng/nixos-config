@@ -1,12 +1,15 @@
 # Command-line applications without module-level configuration. When an
 # app gains real settings, graduate it into its own file next to this
 # one.
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   home.packages = with pkgs; [
     fastfetch
     mcp-nixos
     opencode
+
+    # Only packaged in the unstable channel.
+    pkgs-unstable.fetch
   ];
 }
