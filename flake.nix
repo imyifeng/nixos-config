@@ -65,11 +65,6 @@
         # WSL guest on the helium machine
         helium-nixos-wsl = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          # Same as beryllium: common.nix forwards this input to the
-          # home-manager modules, which cannot see NixOS specialArgs.
-          specialArgs = {
-            pkgs-unstable = import nixpkgs-unstable { system = "x86_64-linux"; };
-          };
           modules = [
             home-manager.nixosModules.home-manager
             nixos-wsl.nixosModules.default
