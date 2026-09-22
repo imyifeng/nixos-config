@@ -13,17 +13,12 @@
     // Polkit authentication agent for pkexec prompts.
     spawn-at-startup "polkit-gnome-authentication-agent-1"
 
-    // Rounded corners for all windows.
+    // Rounded corners for all windows. Draw the focus ring around the
+    // window instead of behind it, so translucent backgrounds (e.g.
+    // foot) stay see-through while focused.
     window-rule {
         geometry-corner-radius 20
         clip-to-geometry true
-    }
-
-    // niri draws the focus ring as a solid rectangle behind the window,
-    // which shows through foot's translucent background and makes it look
-    // opaque while focused. Draw the ring around foot instead.
-    window-rule {
-        match app-id="^foot$"
         draw-border-with-background false
     }
 
@@ -158,5 +153,14 @@
         Ctrl+Print { screenshot-screen; }
         Alt+Print { screenshot-window; }
     }
+
+    // Marks every window as tiled, which makes GTK apps drop their
+    // fallback client-side title bar (Thunar would draw one
+    // otherwise). Niri itself draws no title bar.
+    prefer-no-csd
+
+    // Noctalia renders the active palette colors into noctalia.kdl;
+    // its template hook expects the config to include it.
+    include "~/.config/niri/noctalia.kdl"
   '';
 }
