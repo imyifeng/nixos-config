@@ -29,4 +29,39 @@
     gdb
     pkg-config
   ];
+
+  # Chinese package mirrors for the toolchains above (USTC PyPI,
+  # goproxy.cn, rsproxy.cn, npmmirror).
+  xdg.configFile."uv/uv.toml".text = ''
+    [[index]]
+    url = "https://mirrors.ustc.edu.cn/pypi/simple"
+    default = true
+  '';
+
+  xdg.configFile."pip/pip.conf".text = ''
+    [global]
+    index-url = https://mirrors.ustc.edu.cn/pypi/simple
+  '';
+
+  xdg.configFile."go/env".text = ''
+    GOPROXY=https://goproxy.cn,direct
+  '';
+
+  home.file.".cargo/config.toml".text = ''
+    [source.crates-io]
+    replace-with = "rsproxy-sparse"
+
+    [source.rsproxy-sparse]
+    registry = "sparse+https://rsproxy.cn/index/"
+
+    [registries.rsproxy]
+    index = "sparse+https://rsproxy.cn/index/"
+
+    [net]
+    git-fetch-with-cli = true
+  '';
+
+  home.file.".npmrc".text = ''
+    registry=https://registry.npmmirror.com
+  '';
 }
