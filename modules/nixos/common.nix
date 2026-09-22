@@ -11,6 +11,11 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  # No host-level packet filtering: the machines sit behind a NAT router
+  # and desktop apps (e.g. LocalSend, proxy cores) need arbitrary
+  # listening ports.
+  networking.firewall.enable = false;
+
   # Binary cache: USTC mirror first, official cache as fallback.
   nix.settings.substituters = [
     "https://mirrors.ustc.edu.cn/nix-channels/store"
