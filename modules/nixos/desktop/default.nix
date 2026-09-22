@@ -6,6 +6,7 @@
 {
   imports = [
     ./fcitx5.nix
+    ./fonts.nix
     ./niri.nix
     ./noctalia.nix
     ./clash-party.nix

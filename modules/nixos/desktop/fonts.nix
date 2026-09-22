@@ -1,11 +1,12 @@
-# Font packages and fallback ordering for the generic families.
+# Fonts for the desktop: CJK-friendly packages and fallback ordering
+# for the generic families. Not needed by the headless WSL host.
 { pkgs, ... }:
 
 {
   fonts.fontconfig.enable = true;
 
-  # Per-user defaults for the generic families; home-manager renders them
-  # as strong-binding prefer aliases in conf.d/52-hm-default-fonts.conf.
+  # Rendered as strong-binding prefer aliases in the system fontconfig
+  # configuration.
   fonts.fontconfig.defaultFonts = {
     sansSerif = [
       "Alibaba PuHuiTi 3.0"
@@ -23,9 +24,9 @@
     ];
   };
 
-  home.packages = with pkgs; [
-    (callPackage ../../../pkgs/alibaba-puhuiti/package.nix { })
-    maple-mono.NF-CN
-    noto-fonts
+  fonts.packages = [
+    (pkgs.callPackage ../../../pkgs/alibaba-puhuiti/package.nix { })
+    pkgs.maple-mono.NF-CN
+    pkgs.noto-fonts
   ];
 }
