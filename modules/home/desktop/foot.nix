@@ -3,7 +3,7 @@
 # opened windows without restarting anything. Noctalia's foot template
 # renders the active palette into ~/.config/foot/themes/noctalia, which
 # main.include imports.
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.foot = {
@@ -14,6 +14,8 @@
         font = "Maple Mono NF CN:size=12";
         pad = "10x10";
         include = "~/.config/foot/themes/noctalia";
+        # Launch fish directly; the login shell stays bash.
+        shell = "${pkgs.fish}/bin/fish";
       };
 
       csd.preferred = "none";

@@ -47,6 +47,11 @@
   # Runtime linker fallback for prebuilt binaries shipped without nix support.
   programs.nix-ld.enable = true;
 
+  # Fish runs in the terminal (foot launches it directly); the login
+  # shell stays bash. Enable fish system-wide so it is on PATH outside
+  # home-manager too.
+  programs.fish.enable = true;
+
   # nh: rebuild and garbage-collection helper; NH_FLAKE points at this repo.
   programs.nh = {
     enable = true;
