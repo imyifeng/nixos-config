@@ -3,5 +3,6 @@
   imports = [
     ./cli
     ./dev
+    ./user-dirs.nix
   ];
 }
