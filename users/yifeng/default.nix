@@ -1,10 +1,8 @@
 # Home Manager entry for user yifeng. Hosts import this file and add
-# host-specific modules (e.g. modules/home/gui.nix) alongside it.
+# host-specific modules (e.g. modules/home/desktop) alongside it.
 {
   imports = [
-    ../../modules/home/cli.nix
-    ../../modules/home/dev.nix
-    ../../modules/home/git.nix
+    ../../modules/home/common
   ];
 
   home.username = "yifeng";

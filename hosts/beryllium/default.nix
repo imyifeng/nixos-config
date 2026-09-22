@@ -5,7 +5,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/nixos/common.nix
-    ../../modules/nixos/desktop-env.nix
+    ../../modules/nixos/desktop
   ];
 
   networking.hostName = "beryllium";
@@ -33,9 +33,7 @@
   home-manager.users.yifeng = {
     imports = [
       ../../users/yifeng
-      ../../modules/home/foot.nix
-      ../../modules/home/gui.nix
-      ../../modules/home/niri.nix
+      ../../modules/home/desktop
     ];
   };
 }

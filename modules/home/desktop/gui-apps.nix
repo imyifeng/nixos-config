@@ -1,4 +1,4 @@
-# Graphical applications. Imported only by hosts with a desktop session.
+# Graphical applications without module-level configuration.
 { pkgs, ... }:
 
 {
