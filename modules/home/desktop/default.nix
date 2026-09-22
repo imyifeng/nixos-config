@@ -6,5 +6,6 @@
     ./foot.nix
     ./niri.nix
     ./theme.nix
+    ./thunar.nix
   ];
 }

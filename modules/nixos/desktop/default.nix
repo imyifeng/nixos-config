@@ -9,6 +9,7 @@
     ./fonts.nix
     ./niri.nix
     ./noctalia.nix
+    ./thunar.nix
     ./clash-party.nix
   ];
 
