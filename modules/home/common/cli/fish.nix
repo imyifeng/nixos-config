@@ -1,7 +1,9 @@
-# Fish shell. Home-manager generates shellAliases and
-# interactiveShellInit inside a `status is-interactive` block, so the
-# aliases below never apply to non-interactive fish (scripts, ssh
-# commands) which keep the stock ls/cat behaviour.
+# Fish shell and the tools serving its interactive experience: the
+# starship prompt, eza as ls and bat as cat. All of it is
+# interactive-only: home-manager generates shellAliases and
+# interactiveShellInit inside a `status is-interactive` block, so
+# non-interactive fish (scripts, ssh commands) keeps the stock
+# commands.
 { ... }:
 
 {
@@ -20,4 +22,19 @@
       cat = "bat";
     };
   };
+
+  # Starship prompt. Its fish integration (enableInteractive defaults
+  # to true) emits `starship init fish | source` into the interactive
+  # shell init.
+  programs.starship.enable = true;
+
+  # eza's own alias integration is disabled so it does not fight the
+  # aliases above.
+  programs.eza = {
+    enable = true;
+    enableFishIntegration = false;
+  };
+
+  # bat; wired up as `cat` through the alias above.
+  programs.bat.enable = true;
 }
