@@ -9,5 +9,7 @@
     jq
     mcp-nixos
     opencode
+    vim
+    btop
   ];
 }
