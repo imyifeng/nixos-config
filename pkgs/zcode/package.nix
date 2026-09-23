@@ -46,11 +46,11 @@
 
 stdenv.mkDerivation rec {
   pname = "zcode";
-  version = "3.14.1";
+  version = "3.14.3";
 
   src = fetchurl {
     url = "https://cdn-zcode.z.ai/zcode/electron/releases/${version}/linux-x64/ZCode-${version}-linux-x64.deb";
-    hash = "sha256-K6bZ0TD98ir1APVVosKJ+lMAcS3ZcFIjElH4eCraP98=";
+    hash = "sha256-hRL7eIiWhsfs3JGmCahua0CCVaENsMmvug0+N3sLW08=";
   };
 
   nativeBuildInputs = [
