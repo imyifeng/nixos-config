@@ -54,7 +54,12 @@
           # Inputs for the graphical modules in modules/nixos/desktop-env.nix.
           specialArgs = {
             inherit noctalia noctalia-greeter;
-            pkgs-unstable = import nixpkgs-unstable { system = "x86_64-linux"; };
+            pkgs-unstable = import nixpkgs-unstable {
+              system = "x86_64-linux";
+              # Separate nixpkgs instance: it never sees the module-level
+              # nixpkgs.config, so the unfree policy must be set here too.
+              config.allowUnfree = true;
+            };
           };
           modules = [
             home-manager.nixosModules.home-manager
