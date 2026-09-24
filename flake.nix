@@ -10,7 +10,7 @@
     };
 
     # nixos-unstable channel, used for packages that need newer versions
-    # than the 26.05 pin (e.g. clash-verge-rev). Mix per package with
+    # than the 26.05 pin (e.g. folia-major). Mix per package with
     # `pkgs-unstable.<name>`.
     nixpkgs-unstable = {
       type = "tarball";
