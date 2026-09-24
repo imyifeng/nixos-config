@@ -13,11 +13,17 @@
     // Polkit authentication agent for pkexec prompts.
     spawn-at-startup "polkit-gnome-authentication-agent-1"
 
+    // Uniform gaps between and around windows. The generated noctalia.kdl
+    // also defines a layout block; niri merges them field by field.
+    layout {
+        gaps 8
+    }
+
     // Rounded corners for all windows. Draw the focus ring around the
     // window instead of behind it, so translucent backgrounds (e.g.
     // foot) stay see-through while focused.
     window-rule {
-        geometry-corner-radius 20
+        geometry-corner-radius 16
         clip-to-geometry true
         draw-border-with-background false
     }
