@@ -1,7 +1,7 @@
 # Graphical desktop system stack: session plumbing plus small services
 # that have not earned their own file yet. Imported only by hosts that
 # provide a graphical session.
-{ ... }:
+{ pkgs-unstable, ... }:
 
 {
   imports = [
@@ -12,6 +12,10 @@
     ./thunar.nix
     ./clash-party.nix
   ];
+
+  # Expose the unstable pin to home-manager modules (e.g. gui-apps.nix);
+  # NixOS modules already receive it through specialArgs.
+  home-manager.extraSpecialArgs.pkgs-unstable = pkgs-unstable;
 
   networking.networkmanager.enable = true;
 
