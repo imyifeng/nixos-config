@@ -10,6 +10,7 @@
     google-chrome
     localsend
     obsidian
+    bazaar
     pkgs-unstable.folia-major
     (callPackage ../../../pkgs/zcode/package.nix { })
   ];

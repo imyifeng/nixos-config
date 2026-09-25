@@ -30,4 +30,7 @@
   };
 
   services.printing.enable = true;
+
+  # Flatpak runtime, driven interactively through the Bazaar app store.
+  services.flatpak.enable = true;
 }
