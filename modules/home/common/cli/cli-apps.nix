@@ -5,6 +5,7 @@
 
 {
   home.packages = with pkgs; [
+    android-tools
     fastfetch
     jq
     mcp-nixos
