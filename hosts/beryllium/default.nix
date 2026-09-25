@@ -13,6 +13,14 @@
   # UEFI boot through systemd-boot.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  # Trim the boot menu countdown.
+  boot.loader.timeout = 1;
+
+  # Splash screen during boot; bgrt shows the firmware (OEM) logo.
+  boot.plymouth = {
+    enable = true;
+    theme = "bgrt";
+  };
 
   # Allows managing network connections via NetworkManager.
   users.users.yifeng.extraGroups = [ "networkmanager" ];
