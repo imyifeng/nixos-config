@@ -80,6 +80,12 @@
         saturation 1.0
     }
 
+    // Don't show the "Important Hotkeys" pop-up on startup; the overlay
+    // stays available via Mod+Shift+Slash.
+    hotkey-overlay {
+        skip-at-startup
+    }
+
     binds {
         Mod+Shift+Slash { show-hotkey-overlay; }
 
